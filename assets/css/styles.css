@@ -2077,12 +2077,17 @@ h1, h2, h3, h4, h5, h6 {
 .delay-400 { transition-delay: 0.4s; }
 
 /* --------------------------------------------------------------------------
-   15. RESPONSIVE BREAKPOINTS
+   15. RESPONSIVE BREAKPOINTS & MOBILE OPTIMIZATIONS
    -------------------------------------------------------------------------- */
 @media (max-width: 1024px) {
   .attorney-grid {
     grid-template-columns: 1fr;
     gap: 40px;
+  }
+
+  .attorney-portrait-wrapper {
+    max-width: 480px;
+    margin: 0 auto;
   }
 
   .attorney-portrait-frame img {
@@ -2091,10 +2096,12 @@ h1, h2, h3, h4, h5, h6 {
 
   .booking-chambers-grid {
     grid-template-columns: 1fr;
+    gap: 32px;
   }
 
   .footer-grid {
     grid-template-columns: 1fr 1fr;
+    gap: 32px;
   }
 
   .metrics-hero-grid {
@@ -2107,14 +2114,43 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 @media (max-width: 768px) {
+  /* Layout & Containers */
+  .container, .container-wide {
+    padding: 0 18px;
+  }
+
+  /* Header & Navigation */
+  .top-notice-bar {
+    display: none;
+  }
+
+  .nav-container {
+    height: 68px;
+  }
+
+  .brand-crest {
+    width: 32px;
+    height: 32px;
+    font-size: 0.95rem;
+  }
+
+  .brand-title {
+    font-size: 1.22rem;
+  }
+
+  .brand-subtitle {
+    font-size: 0.625rem;
+  }
+
   .nav-menu {
     position: fixed;
-    top: 80px;
+    top: 68px;
     left: 0;
     width: 100%;
     background: var(--bg-card);
     flex-direction: column;
-    padding: 30px;
+    padding: 24px 20px;
+    gap: 16px;
     box-shadow: var(--shadow-xl);
     border-bottom: 1px solid var(--border-medium);
     transform: translateY(-120%);
@@ -2126,77 +2162,640 @@ h1, h2, h3, h4, h5, h6 {
     transform: translateY(0);
   }
 
+  .nav-link {
+    font-size: 1rem;
+    padding: 8px 0;
+    width: 100%;
+    border-bottom: 1px solid var(--border-subtle);
+  }
+
   .mobile-toggle-btn {
     display: flex;
   }
 
-  .top-notice-bar {
-    display: none;
+  .theme-toggle-btn {
+    width: 36px;
+    height: 36px;
+    font-size: 0.9rem;
+  }
+
+  /* Section Spacing & Common Headers */
+  .hero-section {
+    padding: 40px 0 60px 0;
+  }
+
+  .attorney-section,
+  .practice-section,
+  .track-record-section,
+  .process-section,
+  .booking-section {
+    padding: 60px 0;
+  }
+
+  .section-header-block {
+    margin-bottom: 36px;
+  }
+
+  .section-title {
+    font-size: clamp(1.7rem, 5vw, 2.2rem);
+    line-height: 1.2;
+    margin-bottom: 12px;
+  }
+
+  .section-subtitle {
+    font-size: 0.9375rem;
+    line-height: 1.6;
+  }
+
+  .section-badge {
+    font-size: 0.72rem;
+    padding: 4px 12px;
+    margin-bottom: 12px;
+  }
+
+  /* Hero Mobile Reductions */
+  .hero-header-group {
+    margin-bottom: 24px;
+  }
+
+  .hero-headline {
+    font-size: clamp(1.75rem, 5.8vw, 2.45rem);
+    line-height: 1.15;
+    margin-bottom: 14px;
+  }
+
+  .hero-subheadline {
+    font-size: 0.9375rem;
+    line-height: 1.6;
+    margin-bottom: 22px;
+  }
+
+  .hero-cta-group {
+    gap: 12px;
+  }
+
+  .hero-cta-group .btn {
+    width: 100%;
+  }
+
+  .hero-visual-stage {
+    margin-top: 26px;
+  }
+
+  .hero-center-statue-card {
+    max-width: 290px;
+    border-radius: var(--radius-md);
+  }
+
+  .hero-center-statue-card img {
+    height: 350px;
+  }
+
+  .scroll-badge-wrap {
+    bottom: -22px;
+  }
+
+  .scroll-badge-circle {
+    width: 68px;
+    height: 68px;
+    border-width: 1.5px;
+  }
+
+  .scroll-badge-icon {
+    font-size: 1.05rem;
+  }
+
+  .hero-statement-banner {
+    margin-top: 45px;
+    padding: 20px 16px;
+  }
+
+  .hero-statement-text {
+    font-size: 1.1rem;
+    line-height: 1.55;
   }
 
   .hero-stats-strip {
     grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
+    gap: 16px;
+    padding: 20px 16px;
+    margin-top: 28px;
   }
 
   .hero-stat-item:not(:last-child)::after {
     display: none;
   }
 
-  .practice-grid {
-    grid-template-columns: 1fr;
+  .hero-stat-num {
+    font-size: 1.85rem;
+    margin-bottom: 4px;
   }
 
+  .hero-stat-label {
+    font-size: 0.75rem;
+  }
+
+  /* Section 2: Attorney */
+  .attorney-portrait-frame {
+    max-width: 360px;
+    margin: 0 auto;
+    border-radius: var(--radius-md);
+  }
+
+  .attorney-portrait-frame img {
+    height: 360px;
+  }
+
+  .attorney-seal-overlay {
+    bottom: 14px;
+    right: 14px;
+    padding: 8px 12px;
+    gap: 8px;
+  }
+
+  .attorney-seal-icon {
+    font-size: 1.25rem;
+  }
+
+  .attorney-seal-text strong {
+    font-size: 0.72rem;
+  }
+
+  .attorney-seal-text span {
+    font-size: 0.6875rem;
+  }
+
+  .attorney-name {
+    font-size: clamp(1.7rem, 4.8vw, 2.1rem);
+  }
+
+  .attorney-title-tag {
+    font-size: 0.8125rem;
+  }
+
+  .attorney-quote-box {
+    padding: 18px 20px;
+    margin-bottom: 22px;
+  }
+
+  .attorney-quote-box p {
+    font-size: 0.98rem;
+    line-height: 1.6;
+  }
+
+  .commitments-grid {
+    gap: 12px;
+    margin-bottom: 24px;
+  }
+
+  .commitment-card {
+    padding: 14px 16px;
+    gap: 14px;
+  }
+
+  .commitment-icon-wrap {
+    width: 38px;
+    height: 38px;
+    font-size: 1.05rem;
+  }
+
+  .commitment-details h4 {
+    font-size: 0.95rem;
+  }
+
+  .commitment-details p {
+    font-size: 0.8125rem;
+    line-height: 1.45;
+  }
+
+  .attorney-actions-row {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .attorney-actions-row .btn {
+    width: 100%;
+  }
+
+  /* Section 3: Practice Areas */
+  .practice-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .practice-card {
+    padding: 26px 20px;
+    border-radius: var(--radius-md);
+  }
+
+  .practice-card-top {
+    margin-bottom: 20px;
+  }
+
+  .practice-icon-box {
+    width: 46px;
+    height: 46px;
+    font-size: 1.25rem;
+  }
+
+  .practice-number {
+    font-size: 1.25rem;
+  }
+
+  .practice-card-title {
+    font-size: 1.3rem;
+    margin-bottom: 8px;
+  }
+
+  .practice-card-desc {
+    font-size: 0.875rem;
+    line-height: 1.55;
+    margin-bottom: 16px;
+  }
+
+  .practice-tag-list {
+    gap: 6px;
+    margin-bottom: 16px;
+  }
+
+  .practice-tag {
+    font-size: 0.7rem;
+    padding: 4px 10px;
+  }
+
+  .practice-card-bottom {
+    padding-top: 16px;
+  }
+
+  .practice-briefing-banner {
+    flex-direction: column;
+    text-align: center;
+    padding: 28px 20px;
+    margin-top: 36px;
+    gap: 20px;
+  }
+
+  .practice-briefing-content h4 {
+    font-size: 1.25rem;
+  }
+
+  .practice-briefing-content p {
+    font-size: 0.875rem;
+  }
+
+  .practice-briefing-banner .btn {
+    width: 100%;
+  }
+
+  /* Section 4: Track Record */
+  .metrics-hero-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px;
+    margin-bottom: 40px;
+  }
+
+  .metric-hero-card {
+    padding: 22px 14px;
+  }
+
+  .metric-hero-value {
+    font-size: 2rem;
+    margin-bottom: 4px;
+  }
+
+  .metric-hero-label {
+    font-size: 0.75rem;
+  }
+
+  .testimonial-spotlight-box {
+    grid-template-columns: 1fr;
+    margin-bottom: 40px;
+  }
+
+  .testimonial-visual-side img {
+    height: 220px;
+    min-height: 220px;
+  }
+
+  .testimonial-badge-verified {
+    top: 14px;
+    left: 14px;
+    font-size: 0.6875rem;
+    padding: 4px 10px;
+  }
+
+  .testimonial-content-side {
+    padding: 26px 20px;
+  }
+
+  .stars-rating {
+    font-size: 0.95rem;
+    margin-bottom: 12px;
+  }
+
+  .featured-quote-text {
+    font-size: 1.1rem;
+    line-height: 1.55;
+    margin-bottom: 18px;
+  }
+
+  .author-avatar-mini {
+    width: 44px;
+    height: 44px;
+  }
+
+  .author-info h4 {
+    font-size: 0.95rem;
+  }
+
+  .author-info p {
+    font-size: 0.75rem;
+  }
+
+  .trust-logos-row {
+    gap: 10px;
+  }
+
+  .trust-logo-pill {
+    font-size: 0.8125rem;
+    padding: 8px 14px;
+  }
+
+  /* Section 5: Process */
   .process-timeline {
     grid-template-columns: 1fr;
-    gap: 24px;
+    gap: 20px;
+    margin-top: 30px;
   }
 
   .process-timeline::before {
     display: none;
   }
 
+  .process-step-card {
+    padding: 24px 20px;
+  }
+
+  .step-number-circle {
+    width: 46px;
+    height: 46px;
+    font-size: 1.2rem;
+    margin-bottom: 16px;
+  }
+
+  .step-title {
+    font-size: 1.2rem;
+    margin-bottom: 8px;
+  }
+
+  .step-desc {
+    font-size: 0.875rem;
+    line-height: 1.55;
+    margin-bottom: 16px;
+  }
+
+  .step-highlight-pill {
+    font-size: 0.75rem;
+    padding: 5px 10px;
+  }
+
+  /* Section 6: Booking & Chambers */
+  .booking-widget-card {
+    padding: 24px 18px;
+    border-radius: var(--radius-md);
+  }
+
+  .booking-widget-header {
+    margin-bottom: 20px;
+    padding-bottom: 14px;
+  }
+
+  .booking-widget-title {
+    font-size: 1.35rem;
+  }
+
+  .booking-widget-sub {
+    font-size: 0.8125rem;
+  }
+
+  .consultation-mode-toggle {
+    grid-template-columns: 1fr;
+    gap: 6px;
+    margin-bottom: 20px;
+  }
+
+  .mode-btn {
+    flex-direction: row;
+    justify-content: flex-start;
+    padding: 8px 12px;
+    gap: 10px;
+    font-size: 0.8125rem;
+  }
+
   .calendar-slot-container {
     grid-template-columns: 1fr;
+    gap: 16px;
+    padding: 14px;
+    margin-bottom: 20px;
+  }
+
+  .calendar-picker-box h5, .time-slots-box h5 {
+    font-size: 0.8125rem;
+    margin-bottom: 8px;
+  }
+
+  .cal-day-cell {
+    font-size: 0.75rem;
+  }
+
+  .slots-list {
+    max-height: 160px;
+    gap: 6px;
+  }
+
+  .time-slot-btn {
+    padding: 7px 10px;
+    font-size: 0.75rem;
   }
 
   .booking-form-grid {
     grid-template-columns: 1fr;
+    gap: 14px;
+    margin-bottom: 16px;
   }
 
   .form-group.full-width {
     grid-column: span 1;
   }
 
-  .testimonial-spotlight-box {
-    grid-template-columns: 1fr;
+  .form-label {
+    font-size: 0.75rem;
+    margin-bottom: 4px;
   }
 
-  .testimonial-visual-side img {
-    min-height: 260px;
+  .form-input, .form-select, .form-textarea {
+    padding: 10px 14px;
+    font-size: 0.875rem;
   }
 
-  .practice-briefing-banner {
-    flex-direction: column;
-    text-align: center;
-    padding: 30px 24px;
+  .form-textarea {
+    min-height: 80px;
+  }
+
+  .confidentiality-notice {
+    font-size: 0.75rem;
+    margin-bottom: 16px;
+  }
+
+  .chambers-image-box {
+    height: 170px;
+  }
+
+  .chambers-details-body {
+    padding: 22px 18px;
+  }
+
+  .chambers-contact-list {
+    gap: 16px;
+    margin-bottom: 20px;
+  }
+
+  .contact-item {
+    gap: 12px;
+  }
+
+  .contact-icon-circle {
+    width: 36px;
+    height: 36px;
+    font-size: 0.95rem;
+  }
+
+  .contact-text strong {
+    font-size: 0.75rem;
+  }
+
+  .contact-text a, .contact-text p {
+    font-size: 0.875rem;
+  }
+
+  .regulatory-disclaimer-box {
+    padding: 14px;
+    font-size: 0.75rem;
+    line-height: 1.5;
+  }
+
+  /* Modals on Mobile */
+  .modal-card {
+    padding: 26px 18px;
+    width: 95vw;
+    border-radius: var(--radius-md);
+  }
+
+  .modal-close-btn {
+    top: 14px;
+    right: 14px;
+    width: 30px;
+    height: 30px;
+    font-size: 1rem;
+  }
+
+  .confirm-badge-icon {
+    width: 54px;
+    height: 54px;
+    font-size: 1.5rem;
+    margin-bottom: 14px;
+  }
+
+  .modal-card h3 {
+    font-size: 1.35rem;
+  }
+
+  .confirm-details-summary {
+    padding: 14px;
+    margin: 16px 0;
+  }
+
+  .confirm-summary-row {
+    font-size: 0.8125rem;
+    padding: 6px 0;
+  }
+
+  /* Footer on Mobile */
+  .site-footer {
+    padding: 50px 0 24px 0;
   }
 
   .footer-grid {
     grid-template-columns: 1fr;
+    gap: 28px;
+    margin-bottom: 36px;
+  }
+
+  .footer-brand h3 {
+    font-size: 1.35rem;
+  }
+
+  .footer-watermark-title {
+    font-size: clamp(2rem, 7.5vw, 4rem);
+    margin-bottom: 20px;
+  }
+
+  .footer-bottom-bar {
+    flex-direction: column;
+    text-align: center;
+    gap: 12px;
+    font-size: 0.75rem;
   }
 }
 
 @media (max-width: 480px) {
+  /* Extra Small Mobile Screens */
+  .hero-headline {
+    font-size: 1.65rem;
+  }
+
+  .hero-subheadline {
+    font-size: 0.875rem;
+  }
+
   .hero-stats-strip {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    padding: 16px 12px;
+  }
+
+  .hero-stat-num {
+    font-size: 1.65rem;
+  }
+
+  .hero-center-statue-card {
+    max-width: 250px;
+  }
+
+  .hero-center-statue-card img {
+    height: 300px;
+  }
+
+  .attorney-portrait-frame img {
+    height: 300px;
   }
 
   .metrics-hero-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
   }
 
-  .consultation-mode-toggle {
-    grid-template-columns: 1fr;
+  .metric-hero-value {
+    font-size: 1.65rem;
+  }
+
+  .metric-hero-label {
+    font-size: 0.7rem;
+  }
+
+  .btn {
+    padding: 12px 20px;
+    font-size: 0.875rem;
   }
 }
+
